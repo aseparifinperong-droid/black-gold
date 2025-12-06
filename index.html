@@ -251,34 +251,36 @@
       font-size: 22px;
       letter-spacing: 2px;
     }
-    /* ORNAMEN BERGERAK SAMPING */
-    .ornamen {
-     position: absolute;
-     width: 450px;
-     opacity: 0.7;
-     pointer-events: none;
-     z-index: -1;
-     animation: floatSide 4s ease-in-out infinite alternate;
-    }
+    /* General ornament */
+.ornament {
+  position: absolute;
+  z-index: 5;
+  animation: float 4s ease-in-out infinite alternate;
+  opacity: 0.95;
+}
 
-    /* Posisi kiri */
-    .ornamen-left {
-     left: 10px;
-     bottom: 15%;
-    }
+.ornament img {
+  width: 230px; /* → ukuran mendekati teks */
+  max-width: none;
+}
 
-    /* Posisi kanan */
-    .ornamen-right {
-     right: 10px;
-     top: 18%;
-     animation-delay: 1.2s;
-    }
+/* Ornament kanan (dekat tulisan THE WEDDING OF) */
+.ornament-right {
+  top: 120px;      /* turunkan sedikit mendekati teks */
+  right: -10px;    /* sedikit keluar untuk kesan elegan */
+}
 
-    @keyframes floatSide {
-     from { transform: translateX(0); }
-     to   { transform: translateX(20px); }
-    }
+/* Ornament kiri (dekat tombol Buka Undangan) */
+.ornament-left {
+  bottom: 110px;   /* dekat tombol */
+  left: -10px;
+}
 
+/* Floating animation */
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  100% { transform: translateY(12px); }
+}
     /* Popup Save The Date */
     #saveDatePopup {
       position: fixed;
@@ -657,5 +659,6 @@
   </script>
 </body>
 </html>
+
 
 
